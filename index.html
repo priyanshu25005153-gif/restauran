@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Flavors & Fire – Fine Dining Restaurant</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; background: #f5eee7; color: #442a1c;}
+    header { background: #d7263d; color: #fff; padding: 2em 0; text-align: center;}
+    nav { background: #79211f; text-align: center;}
+    nav a {
+      color: #fff; padding: 1em 2em; display: inline-block; text-decoration: none; font-weight: bold;
+    }
+    nav a:hover { background: #d7263d;}
+    .container { max-width: 1000px; margin: 2em auto; background: #fff; padding: 2em;
+      border-radius: 13px; box-shadow: 0 0 14px #eab99c;}
+    section { margin-bottom: 2.25em;}
+    h2 { color: #d7263d; margin-bottom: 0.5em;}
+    /* Menu */
+    .menu-section {}
+    .menu-list { display: flex; flex-wrap: wrap; gap: 2em;}
+    .menu-card {
+      background: #fff3ed; border: 2px solid #eab99c; border-radius: 9px;
+      padding: 1em 1.2em; width: 250px; box-shadow: 0 1px 6px #eab99c; margin-bottom: 1em;
+    }
+    .dish-title { font-size: 1.08em; font-weight: bold; color: #79211f;}
+    .dish-type { color: #e48f45; font-size: 0.95em;}
+    .dish-price { color: #d7263d; font-weight: bold;}
+    /* Reservation */
+    .reservation-form label { display:block; margin-bottom: 0.3em;}
+    .reservation-form input, .reservation-form select {
+      width: 98%; padding: 0.6em; border-radius: 6px; border: 1px solid #fbcfaa; margin-bottom: 1em;
+    }
+    .reservation-form button {
+      background: #d7263d; color: #fff; border: none; padding: 0.7em 2em;
+      font-size: 1em; border-radius: 6px; cursor: pointer; font-weight: bold;
+    }
+    .reservation-form button:hover { background: #79211f;}
+    /* Reviews */
+    .reviews-list {
+      display: flex; flex-wrap: wrap; gap: 1.8em;
+    }
+    .review {
+      background: #f7d6cb; border-radius: 8px; padding: 1em 1.3em;
+      box-shadow: 0 1px 6px #eab99c; width: 280px;
+    }
+    .reviewer { color: #9e2d2b; font-weight: bold;}
+    .stars { color: #ff9900;}
+    footer { background: #d7263d; color: #fff; text-align: center; padding: 1.3em 0; margin-top: 2em;}
+    @media (max-width: 800px) {
+      .container { padding: 1em;}
+      .menu-list, .reviews-list { flex-direction: column; gap: 1em;}
+      .menu-card, .review { width: 100%;}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Flavors & Fire</h1>
+    <p>Fine Dining | Modern World Cuisine</p>
+  </header>
+  <nav>
+    <a href="#menu">Menu</a>
+    <a href="#reservation">Reserve Table</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <div class="container">
+    <!-- Menu Section -->
+    <section id="menu" class="menu-section">
+      <h2>Our Menu</h2>
+      <div class="menu-list">
+        <div class="menu-card">
+          <div class="dish-title">Smoky Chipotle Pasta</div>
+          <div class="dish-type">Veg | Main Course</div>
+          <div>Creamy pasta with fire roasted peppers and chipotle sauce.</div>
+          <div class="dish-price">₹389</div>
+        </div>
+        <div class="menu-card">
+          <div class="dish-title">Classic Caesar Salad</div>
+          <div class="dish-type">Veg | Starter</div>
+          <div>Fresh romaine, croutons, parmesan, and homemade dressing.</div>
+          <div class="dish-price">₹229</div>
+        </div>
+        <div class="menu-card">
+          <div class="dish-title">Tandoori Grilled Chicken</div>
+          <div class="dish-type">Non-Veg | Main Course</div>
+          <div>Char-grilled chicken marinated with authentic Indian spices.</div>
+          <div class="dish-price">₹449</div>
+        </div>
+        <div class="menu-card">
+          <div class="dish-title">Molten Lava Cake</div>
+          <div class="dish-type">Dessert</div>
+          <div>Rich chocolate cake with gooey melted center, served warm.</div>
+          <div class="dish-price">₹219</div>
+        </div>
+      </div>
+    </section>
+    <!-- Reservation Form -->
+    <section id="reservation">
+      <h2>Online Reservation</h2>
+      <form class="reservation-form" onsubmit="alert('Thank you! Your reservation has been received.');return false;">
+        <label for="name">Name:</label>
+        <input type="text" id="name" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+        <label for="people">No. of People:</label>
+        <select id="people" required>
+          <option value="">Select</option>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5+</option>
+        </select>
+        <label for="date">Date:</label>
+        <input type="date" id="date" required>
+        <label for="time">Time:</label>
+        <input type="time" id="time" required>
+        <button type="submit">Reserve Table</button>
+      </form>
+    </section>
+    <!-- Customer Reviews -->
+    <section id="reviews">
+      <h2>Customer Reviews</h2>
+      <div class="reviews-list">
+        <div class="review">
+          <p>"Amazing flavors and top-notch service. The Tandoori Grilled Chicken was a highlight!"</p>
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="reviewer">- Priya Sharma</div>
+        </div>
+        <div class="review">
+          <p>"The best pasta I've had in town. The ambience is both cozy and stylish!"</p>
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#189;</div>
+          <div class="reviewer">- Aman Verma</div>
+        </div>
+        <div class="review">
+          <p>"Desserts are divine. Don't miss the Molten Lava Cake!"</p>
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="reviewer">- Simran Kaur</div>
+        </div>
+      </div>
+    </section>
+    <!-- Contact Info -->
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p>Email: <a href="mailto:info@flavorsandfire.com">info@flavorsandfire.com</a></p>
+      <p>Phone: +91-99999-88877</p>
+      <p>Address: 111 Spice Road, New Delhi, India</p>
+    </section>
+  </div>
+  <footer>
+    &copy; 2025 Flavors & Fire. All rights reserved.
+  </footer>
+</body>
+</html>
